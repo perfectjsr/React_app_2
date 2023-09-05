@@ -60,3 +60,11 @@
     transform: rotate(360deg);
   }
 }
+.box{
+  width: 100%;
+  height: 80vh;
+}
+
+.buttonbox{
+  text-align: center;
+}

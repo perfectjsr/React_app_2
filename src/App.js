@@ -3,6 +3,9 @@ import './App.css';
 import NavBar from './components/NavBar';
 import HomeCarousel from './components/HomeCarousel';
 import ImageCard from './components/ImageCard';
+import data from './data';
+
+const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
 function App() {
   const [Data, setData] = useState([]);
@@ -27,15 +30,15 @@ function App() {
     <div>
       <NavBar />
       <HomeCarousel />
-      <h1 className='myheading'>TOP BROWSED PRODUCTS FORM YOUR HISTORY</h1>
+      <h1 className='myheading'>TOP TRENDING MOVIES ON IMDB</h1>
       <div className='imgs'>
         {
-          Data.map((obj) => {
+          data.map((obj) => {
             return (
               <div key={obj.id} className='Imgbox '>
-                <ImageCard title={obj.title} description={obj.description} image={obj.images[0]} />
+                <ImageCard title={obj.title} image={API_IMG + obj.poster_path} />
               </div>
-            )
+            ) 
           })
         }
       </div>
